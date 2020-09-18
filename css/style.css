@@ -1,0 +1,233 @@
+/* FONTS */
+/* pt-sans-regular */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("PT Sans"), local("PTSans-Regular"),
+        url("../fonts/ptsans.woff2") format("woff2"), /* Super Modern Browsers */
+        url("../fonts/ptsans.woff") format("woff"), /* Modern Browsers */
+}
+
+/* pt-sans-bold */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("PT Sans Bold"), local("PTSans-Bold"),
+        url("../fonts/ptsansbold.woff2") format("woff2"), /* Super Modern Browsers */
+        url("../fonts/ptsansbold.woff") format("woff"), /* Modern Browsers */
+}
+
+/* VARIABLES */
+:root {
+  /* colors */
+  --basic-black: #000000;
+  --basic-black-active: rgba(0, 0, 0, 0.3);
+  --basic-dark: #333333;
+ 
+  --basic-grey: #808080;
+  --basic-grey-body: #f2f2f2;
+  --basic-grey-extra: #eeeeee;
+  
+  --basic-white: #ffffff;
+  --basic-white-active: rgba(255, 255, 255, 0.3);
+  
+  --basic-brown: #766357;
+  --basic-brown-hover: #604e43;
+  --basic-brown-active: #503E33;
+  
+  --basic-marine: #81b3d2;
+  --basic-marine-hover: #669ec0;
+  --basic-marine-active: #5496bd;
+
+  /* shadow */
+  --page-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+}
+
+/* ALL PAGE */
+.page__body {
+  min-width: 1280px;
+  padding: 0;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--basic-black);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--basic-grey-body);
+}
+
+.center {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: var(--basic-white);
+  box-shadow: var(--page-shadow);
+}
+
+.page__body a {
+  text-decoration: none;
+}
+
+.page__body img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* GENERAL STYLE */
+/* для скрытия заголовков и вспом. текста class="visually__hidden" */
+.nav__list,
+.advantages__reasons,
+.features,
+.socials__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* HEADER */
+/* site navigation */
+.header__nav {
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.nav__link {
+  color: var(--basic-black);
+}
+
+.nav__link:hover {
+  color: var(--basic-marine);
+}
+
+.nav__link:active {
+  color: var(--basic-black-active);
+}
+
+/* MAIN */
+/* welcome */
+.welcome {
+  background-color: var(--basic-grey); 
+}
+
+/* advantages */
+.advantages__slogan {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.advantages h2 {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--basic-dark);
+}
+
+.advantages__reasons {
+  background-color: var(--basic-grey-extra);
+}
+
+.town__wrapper,
+.bridge__wrapper {
+  color: var(--basic-white);
+  background-color: var(--basic-marine);
+}
+
+.features {
+  background-color: var(--basic-white);
+}
+
+.town__wrapper h3,
+.bridge__wrapper h3,
+.features h3,
+.reasons__area h3,
+.reasons__road h3,
+.reasons__tourists h3 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.features p,
+.reasons__area p,
+.reasons__road p,
+.reasons__tourists p,
+.search__info {
+  color: var(--basic-dark);
+}
+
+/* search */
+.search h2 {
+  font-size: 30px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.search__info {
+  line-height: 24px;
+}
+
+/* button */
+.button {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+  color: var(--basic-white);
+  vertical-align: middle;
+  text-transform: uppercase;
+  border: none;
+}
+
+.toggle__modal {
+  background-color: var(--basic-brown);
+}
+
+.toggle__modal:hover {
+  background-color: var(--basic-brown-hover);
+}
+
+.toggle__modal:active {
+  color: var(--basic-white-active);
+  background-color: var(--basic-brown-active);
+}
+
+/* FOOTER */
+/* contacts */
+.contacts {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.contacts__address {
+  font-style: normal; 
+}
+
+.contacts__phone {
+  color: var(--basic-black);
+} 
+
+.contacts__phone:hover {
+  text-decoration: underline;
+}
+
+/* socials */
+.socials__button {
+  color: var(--basic-white);
+  background-color: var(--basic-marine);
+}
+
+.socials__button:hover {
+  background-color: var(--basic-marine-hover);
+}
+
+.socials__button:active {
+  color: var(--basic-white-active);
+  background-color: var(--basic-marine-active);
+}
+
+/* В будущем не забыть добавить серый фон фотографиям и карте */
+
+
+
+

@@ -1,52 +1,58 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
-  </head>
-  <body>
-<!-- begining of HEADER -->  
+<html class="page" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Седона</title>
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="page__body">
+  <div class="center"> 
+    
+    <!-- begining of HEADER -->
     <header class="header">
-      <nav class="nav">
-        <div class="nav__logo">
-          <a>
-            <img src="http://dummyimage.com/138x70/81B3D3&text=The+logo" width="138" height="70" alt="Логотип сайта">
-          </a>
-        </div>
+      <nav class="header__nav">
+        <a class="nav__logo">
+          <img src="http://dummyimage.com/138x70/81B3D3&text=The+logo" width="138" height="70" alt="Логотип сайта города Седона">
+        </a>
         
         <ul class="nav__list">
-          <li class="nav__item"><a href="">Информация</a></li>
-          <li class="nav__item"><a href="">Фото и видео</a></li>
-          <li class="nav__item"><a href="">Карта штата</a></li>
-          <li class="nav__item"><a href="hotels.html">Гостиницы</a></li>
+          <li class="nav__item"><a class="nav__link" href="">Информация</a></li>
+          <li class="nav__item"><a class="nav__link" href="">Фото и видео</a></li>
+          <li class="nav__item"><a class="nav__link" href="">Карта штата</a></li>
+          <li class="nav__item"><a class="nav__link" href="hotels.html">Гостиницы</a></li>
         </ul>
       </nav>
     </header>
 
-<!-- begining of MAIN -->    
-    <main>
+    <!-- begining of MAIN -->    
+    <main class="index__main">
       
-      <h1>Великолепный, туристический городок Седона!</h1>
+      <h1 class="visually__hidden">Великолепный, туристический городок Седона!</h1>
       
       <section class="welcome">
-        <h2>Добро пожаловать в Седону!</h2>
+        <h2 class="visually__hidden">Добро пожаловать в Седону!</h2>
         <!-- Горы - фоном, текст - через img, маска - псевдоэлемент, размеры img округлил в большую сторону -->
-        <img src="http://dummyimage.com/457x351/85A9C7&text=Welcome" width="457" height="351" alt="Общий пейзаж Седоны">
+        <!--<img src="http://dummyimage.com/457x351/85A9C7&text=Welcome" width="457" height="351" alt="Добро пожаловать в великолепную Седону!">-->
+        <img src="img/welcome.svg" width="457" height="351" alt="Добро пожаловать в великолепную Седону!">
       </section>
       
       <section class="advantages">
         <p class="advantages__slogan">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
         <h2>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</h2>
 
-        <ul class="advantages__list">
-          <li>
-            <h3>Настоящий городок</h3>
-            <p>— №1 —</p>
-            <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+        <ul class="advantages__reasons">
+          <li class="reasons__town">
+            <div class="town__wrapper">
+              <h3>Настоящий городок</h3>
+              <p>— №1 —</p>
+              <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+            </div>
+            
             <img src="http://dummyimage.com/800x256/A4B7C5&text=The+hotels" width="800" height="256" alt="Прекрасные отели Седоны">
 
             <ul class="features">
-              <li>
+              <li class="features__item">
                 <h3>Жильё</h3>
                 <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
@@ -61,26 +67,29 @@
             </ul> 
           </li>
           
-          <li> 
-              <h3>Там есть Мост Диавола</h3>
-              <p>— №2 —</p>
-              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+          <li class="reasons__bridge"> 
+              <div class="bridge__wrapper">
+                <h3>Там есть Мост Диавола</h3>
+                <p>— №2 —</p>
+                <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+              </div>
+              
               <img src="http://dummyimage.com/800x256/CA765B&text=Devil's+Bridge" width="800" height="256" alt="Мост Диавола">
           </li>
           
-          <li>
+          <li class="reasons__area">
               <h3>Небольшая площадь</h3>
               <p>— №3 —</p>
               <p>Все достопримечательности находятся очень близко</p>
           </li>
           
-          <li>
+          <li class="reasons__road">
               <h3>Красивая дорога</h3>
               <p>— №4 —</p>
               <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
           
-          <li>
+          <li class="reasons__tourists">
               <h3>Мало туристов</h3>
               <p>— №5 —</p>
               <p>Большинство едет в Гранд Каньон и толпится там</p>
@@ -90,34 +99,47 @@
 
       <section class="search">
         <h2>Заинтересовались?</h2>
-        <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-
-        <div class="search__hotel">
-          <button type="button">Поиск гостиницы в Седоне</button>
-          <!-- Здесь будут формы -->
-          <div class="search__map">
-            <!-- Временно сделал карту картинкой, потом переделаю на интерактив -->
-            <img src="http://dummyimage.com/1199x594/CBDDA9&text=The+map" alt="Карта гостиниц Седона">
-          </div>
+        <p class="search__info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        
+        <button class="button toggle__modal" type="button">Поиск гостиницы в Седоне</button>
+        <!-- Здесь будут формы, class="search__modal"-->
+        <div class="search__map">
+          <!-- Временно сделал карту картинкой, потом переделаю на интерактив -->
+          <img src="http://dummyimage.com/1199x594/CBDDA9&text=The+map" alt="Карта гостиниц Седоны">
         </div>
       </section>
     </main>
 
-<!-- begining of FOOTER -->   
+    <!-- begining of FOOTER -->   
     <footer class="footer">
       
       <section class="contacts">
-        <h2>Контактная информация</h2>
+        <h2 class="visually__hidden">Контактная информация</h2>
         <p>#visitSEDONA</p>
-        <address>ТЕЛ: <a href="tel:+74956660166"> +7(495) 666-01-66</a></address>
+        <address class="contacts__address">ТЕЛ: <a class="contacts__phone" href="tel:+74956660166">+7(495) 666-01-66</a></address>
       </section>
       
-      <section class="networks">
-        <h2>Давайте дружить!</h2>
-        <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Youtube</a></li>
+      <section class="socials">
+        <h2 class="visually__hidden">Давайте дружить!</h2>
+        <ul class="socials__list">
+          <li>
+            <a class="socials__button" href="#">
+              <span class="visually__hidden">Twitter</span>
+              <!-- SVG -->
+            </a>
+          </li>
+          <li>
+            <a class="socials__button" href="#">
+              <span class="visually__hidden">Facebook</span>
+              <!-- SVG -->
+            </a>
+          </li>
+          <li>
+            <a class="socials__button" href="#">
+              <span class="visually__hidden">Youtube</span>
+              <!-- SVG -->
+            </a>
+          </li>
         </ul>
       </section>
       
@@ -126,5 +148,7 @@
         <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="http://dummyimage.com/115x41/a8a8a8&text=The+logo-HTMLacad" width="115" height="41" alt="Логотип HTML Академии"></a>
       </div>
     </footer> 
-  </body>
+
+  </div>
+</body>
 </html>
