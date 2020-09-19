@@ -169,6 +169,7 @@
   font-size: 30px;
   line-height: 24px;
   font-weight: 700;
+  color: var(--basic-black);
 }
 
 .search__info {
