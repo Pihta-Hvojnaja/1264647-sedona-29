@@ -11,7 +11,7 @@
     
     <!-- begining of HEADER -->
     <header class="header">
-      <nav class="header__nav">
+      <nav class="nav">
         <a class="nav__logo">
           <img src="http://dummyimage.com/138x70/81B3D3&text=The+logo" width="138" height="70" alt="Логотип сайта города Седона">
         </a>
@@ -26,25 +26,25 @@
     </header>
 
     <!-- begining of MAIN -->    
-    <main class="index__main">
+    <main class="main">
       
-      <h1 class="visually__hidden">Великолепный, туристический городок Седона!</h1>
+      <h1 class="hidden">Великолепный, туристический городок Седона!</h1>
       
       <section class="welcome">
-        <h2 class="visually__hidden">Добро пожаловать в Седону!</h2>
+        <h2 class="hidden">Добро пожаловать в Седону!</h2>
         <!-- Горы - фоном, текст - через img, маска - псевдоэлемент, размеры img округлил в большую сторону -->
         <!--<img src="http://dummyimage.com/457x351/85A9C7&text=Welcome" width="457" height="351" alt="Добро пожаловать в великолепную Седону!">-->
         <img src="img/welcome.svg" width="457" height="351" alt="Добро пожаловать в великолепную Седону!">
       </section>
       
       <section class="advantages">
-        <p class="advantages__slogan">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
-        <h2>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</h2>
+        <p class="advantages__slogan title">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+        <h2 class="text">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</h2>
 
-        <ul class="advantages__reasons">
-          <li class="reasons__town">
-            <div class="town__wrapper">
-              <h3>Настоящий городок</h3>
+        <ul class="advantages__list">
+          <li class="advantages__item another">
+            <div class="wrapper">
+              <h3 class="title">Настоящий городок</h3>
               <p>— №1 —</p>
               <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
@@ -53,23 +53,23 @@
 
             <ul class="features">
               <li class="features__item">
-                <h3>Жильё</h3>
-                <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+                <h3 class="title">Жильё</h3>
+                <p class="text">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
               <li>
-                <h3>Еда</h3>
-                <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+                <h3 class="title">Еда</h3>
+                <p class="text">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
               </li>
               <li>
-                <h3>Сувениры</h3>
-                <p>Не только китайского, но и местного производства!</p>
+                <h3 class="title">Сувениры</h3>
+                <p class="text">Не только китайского, но и местного производства!</p>
               </li>
             </ul> 
           </li>
           
-          <li class="reasons__bridge"> 
-              <div class="bridge__wrapper">
-                <h3>Там есть Мост Диавола</h3>
+          <li class="advantages__item another"> 
+              <div class="wrapper">
+                <h3 class="title">Там есть Мост Диавола</h3>
                 <p>— №2 —</p>
                 <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
               </div>
@@ -77,29 +77,29 @@
               <img src="http://dummyimage.com/800x256/CA765B&text=Devil's+Bridge" width="800" height="256" alt="Мост Диавола">
           </li>
           
-          <li class="reasons__area">
-              <h3>Небольшая площадь</h3>
-              <p>— №3 —</p>
-              <p>Все достопримечательности находятся очень близко</p>
+          <li class="advantages__item">
+              <h3 class="title">Небольшая площадь</h3>
+              <p class="text">— №3 —</p>
+              <p class="text">Все достопримечательности находятся очень близко</p>
           </li>
           
-          <li class="reasons__road">
-              <h3>Красивая дорога</h3>
-              <p>— №4 —</p>
-              <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          <li class="advantages__item">
+              <h3 class="title">Красивая дорога</h3>
+              <p class="text">— №4 —</p>
+              <p class="text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
           
-          <li class="reasons__tourists">
-              <h3>Мало туристов</h3>
-              <p>— №5 —</p>
-              <p>Большинство едет в Гранд Каньон и толпится там</p>
+          <li class="advantages__item">
+              <h3 class="title">Мало туристов</h3>
+              <p class="text">— №5 —</p>
+              <p class="text">Большинство едет в Гранд Каньон и толпится там</p>
           </li>
         </ul>
       </section>
 
       <section class="search">
         <h2>Заинтересовались?</h2>
-        <p class="search__info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <p class="search__info text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         
         <button class="button toggle__modal" type="button">Поиск гостиницы в Седоне</button>
         <!-- Здесь будут формы, class="search__modal"-->
@@ -114,29 +114,29 @@
     <footer class="footer">
       
       <section class="contacts">
-        <h2 class="visually__hidden">Контактная информация</h2>
-        <p>#visitSEDONA</p>
-        <address class="contacts__address">ТЕЛ: <a class="contacts__phone" href="tel:+74956660166">+7(495) 666-01-66</a></address>
+        <h2 class="hidden">Контактная информация</h2>
+        <p class="title">#visitSEDONA</p>
+        <address class="contacts__address title">ТЕЛ: <a class="contacts__phone" href="tel:+74956660166">+7(495) 666-01-66</a></address>
       </section>
       
       <section class="socials">
-        <h2 class="visually__hidden">Давайте дружить!</h2>
+        <h2 class="hidden">Давайте дружить!</h2>
         <ul class="socials__list">
           <li>
             <a class="socials__button" href="#">
-              <span class="visually__hidden">Twitter</span>
+              <span class="hidden">Twitter</span>
               <!-- SVG -->
             </a>
           </li>
           <li>
             <a class="socials__button" href="#">
-              <span class="visually__hidden">Facebook</span>
+              <span class="hidden">Facebook</span>
               <!-- SVG -->
             </a>
           </li>
           <li>
             <a class="socials__button" href="#">
-              <span class="visually__hidden">Youtube</span>
+              <span class="hidden">Youtube</span>
               <!-- SVG -->
             </a>
           </li>

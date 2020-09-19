@@ -6,7 +6,7 @@
   font-weight: 400;
   src: local("PT Sans"), local("PTSans-Regular"),
         url("../fonts/ptsans.woff2") format("woff2"), /* Super Modern Browsers */
-        url("../fonts/ptsans.woff") format("woff"), /* Modern Browsers */
+        url("../fonts/ptsans.woff") format("woff"); /* Modern Browsers */
 }
 
 /* pt-sans-bold */
@@ -16,7 +16,7 @@
   font-weight: 700;
   src: local("PT Sans Bold"), local("PTSans-Bold"),
         url("../fonts/ptsansbold.woff2") format("woff2"), /* Super Modern Browsers */
-        url("../fonts/ptsansbold.woff") format("woff"), /* Modern Browsers */
+        url("../fonts/ptsansbold.woff") format("woff"); /* Modern Browsers */
 }
 
 /* VARIABLES */
@@ -75,9 +75,9 @@
 }
 
 /* GENERAL STYLE */
-/* для скрытия заголовков и вспом. текста class="visually__hidden" */
+/* для скрытия заголовков и вспом. текста  селектор по class="hidden" */
 .nav__list,
-.advantages__reasons,
+.advantages__list,
 .features,
 .socials__list {
   margin: 0;
@@ -85,9 +85,22 @@
   list-style: none;
 }
 
+.title {
+  margin: 0; /* временно, для наглядности */
+  padding: 14px 0 14px 0; /* временно, для наглядности */
+  font-size: 21px;
+  font-weight: 700;  
+}
+
+.text {
+  margin: 0; /* временно, для наглядности */
+  padding: 0 0 14px 0; /* временно, для наглядности */
+  color: var(--basic-dark);
+}
+
 /* HEADER */
 /* site navigation */
-.header__nav {
+.nav {
   line-height: 26px;
   font-weight: 700;
 }
@@ -112,48 +125,30 @@
 
 /* advantages */
 .advantages__slogan {
-  font-size: 21px;
   line-height: 26px;
-  font-weight: 700;
 }
 
 .advantages h2 {
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
-  color: var(--basic-dark);
 }
 
-.advantages__reasons {
+.advantages__list {
   background-color: var(--basic-grey-extra);
 }
 
-.town__wrapper,
-.bridge__wrapper {
-  color: var(--basic-white);
+/* селектор для выделения первых двух пунктов advantages__list */
+.another {
   background-color: var(--basic-marine);
+}
+
+.wrapper {
+  color: var(--basic-white); 
 }
 
 .features {
   background-color: var(--basic-white);
-}
-
-.town__wrapper h3,
-.bridge__wrapper h3,
-.features h3,
-.reasons__area h3,
-.reasons__road h3,
-.reasons__tourists h3 {
-  font-size: 21px;
-  font-weight: 700;
-}
-
-.features p,
-.reasons__area p,
-.reasons__road p,
-.reasons__tourists p,
-.search__info {
-  color: var(--basic-dark);
 }
 
 /* search */
@@ -194,9 +189,7 @@
 /* FOOTER */
 /* contacts */
 .contacts {
-  font-size: 21px;
   line-height: 26px;
-  font-weight: 700;
 }
 
 .contacts__address {
