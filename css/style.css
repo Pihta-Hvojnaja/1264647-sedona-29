@@ -51,8 +51,6 @@
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
-  line-height: 21px;
-  color: var(--basic-black);
   text-align: center;
   text-transform: uppercase;
   background-color: var(--basic-grey-body);
@@ -74,6 +72,18 @@
   height: auto;
 }
 
+/* временные отступы */
+.page__body h2,
+.page__body h3 {
+  margin: 0;
+  padding: 20px 0 14px; 
+}
+
+.page__body p {
+  margin: 0;
+  padding: 14px 0;
+}
+
 /* GENERAL STYLE */
 /* для скрытия заголовков и вспом. текста  селектор по class="hidden" */
 .nav__list,
@@ -85,17 +95,10 @@
   list-style: none;
 }
 
-.title {
-  margin: 0; /* временно, для наглядности */
-  padding: 14px 0 14px 0; /* временно, для наглядности */
+.bold {
   font-size: 21px;
-  font-weight: 700;  
-}
-
-.text {
-  margin: 0; /* временно, для наглядности */
-  padding: 0 0 14px 0; /* временно, для наглядности */
-  color: var(--basic-dark);
+  font-weight: 700;
+  color: var(--basic-black); 
 }
 
 /* HEADER */
@@ -118,6 +121,11 @@
 }
 
 /* MAIN */
+.main {
+  line-height: 21px;
+  color: var(--basic-dark);
+}
+
 /* welcome */
 .welcome {
   background-color: var(--basic-grey); 
@@ -138,13 +146,18 @@
   background-color: var(--basic-grey-extra);
 }
 
-/* селектор для выделения первых двух пунктов advantages__list */
-.another {
+.advantages__item__another {
   background-color: var(--basic-marine);
 }
 
-.wrapper {
+.advantages__wrapper  {
   color: var(--basic-white); 
+}
+
+.advantages__wrapper h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--basic-white);
 }
 
 .features {
@@ -187,17 +200,18 @@
 }
 
 /* FOOTER */
-/* contacts */
-.contacts {
+.footer {
   line-height: 26px;
+  color: var(--basic-black);
 }
 
+/* contacts */
 .contacts__address {
   font-style: normal; 
 }
 
 .contacts__phone {
-  color: var(--basic-black);
+  color: inherit;
 } 
 
 .contacts__phone:hover {
