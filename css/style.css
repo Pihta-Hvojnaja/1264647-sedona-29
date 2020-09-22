@@ -28,7 +28,9 @@
  
   --basic-grey: #808080;
   --basic-grey-body: #f2f2f2;
+  --basic-grey-rating: #666666;
   --basic-grey-extra: #eeeeee;
+  --basic-pink-grey: #e5e5e5;
   
   --basic-white: #ffffff;
   --basic-white-active: rgba(255, 255, 255, 0.3);
@@ -46,14 +48,19 @@
 }
 
 /* ALL PAGE */
-.page__body {
+.body {
   min-width: 1280px;
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
-  text-align: center;
   text-transform: uppercase;
   background-color: var(--basic-grey-body);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .center {
@@ -63,36 +70,51 @@
   box-shadow: var(--page-shadow);
 }
 
-.page__body a {
+.body a {
   text-decoration: none;
 }
 
-.page__body img {
+.body img {
   max-width: 100%;
   height: auto;
 }
 
 /* временные отступы */
-.page__body h2,
-.page__body h3 {
+.body h2,
+.body h3 {
   margin: 0;
   padding: 20px 0 14px; 
 }
 
-.page__body p {
+.body p {
   margin: 0;
-  padding: 14px 0;
 }
 
 /* GENERAL STYLE */
-/* для скрытия заголовков и вспом. текста  селектор по class="hidden" */
-.nav__list,
-.advantages__list,
-.features,
-.socials__list {
+.reset {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* для скрытия элементов
+.hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); / IE6, IE7 /
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0;
+	border: 0;
+	height: 1px; 
+	width: 1px; 
+	overflow: hidden;
+} */
+
+.active {
+  color: var(--basic-brown);
+}
+
+.current {
+  color: var(--basic-marine);
 }
 
 .bold {
@@ -101,8 +123,12 @@
   color: var(--basic-black); 
 }
 
-/* HEADER */
+/* THE HEADER OF THE PAGES */
 /* site navigation */
+.header {
+  text-align: center; /* временно */
+}
+
 .nav {
   line-height: 26px;
   font-weight: 700;
@@ -120,10 +146,51 @@
   color: var(--basic-black-active);
 }
 
-/* MAIN */
+/* THE MAIN OF THE PAGES */
 .main {
   line-height: 21px;
   color: var(--basic-dark);
+}
+
+/* THE FOOTER OF THE PAGES */
+.footer {
+  line-height: 26px;
+  text-align: center;
+  color: var(--basic-black);
+}
+
+/* contacts */
+.contacts__address {
+  font-style: normal; 
+}
+
+.contacts__phone {
+  color: inherit;
+} 
+
+.contacts__phone:hover {
+  text-decoration: underline;
+}
+
+/* socials */
+.socials__button {
+  color: var(--basic-white);
+  background-color: var(--basic-marine);
+}
+
+.socials__button:hover {
+  background-color: var(--basic-marine-hover);
+}
+
+.socials__button:active {
+  color: var(--basic-white-active);
+  background-color: var(--basic-marine-active);
+}
+
+/* -- STYLES OF PAGE -- INDEX -- */
+/* index__main*/
+.index__main {
+  text-align: center;
 }
 
 /* welcome */
@@ -176,8 +243,8 @@
   line-height: 24px;
 }
 
-/* button */
-.button {
+/* search__button */
+.search__button {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -200,40 +267,109 @@
   background-color: var(--basic-brown-active);
 }
 
-/* FOOTER */
-.footer {
+/* -- STYLES PAGE -- HOTELS -- */
+.hotels__main {
+  padding-left: 73px; /* временно */
+}
+
+/* filter */
+
+/* hotels */
+.sort {
+  padding-bottom: 14px; /* временный отступ */
+}
+
+.sort__paragraph {
   line-height: 26px;
+}
+
+.sort__title {
   color: var(--basic-black);
 }
 
-/* contacts */
-.contacts__address {
-  font-style: normal; 
+.sort__title,
+.sort__list  {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
 }
 
-.contacts__phone {
-  color: inherit;
-} 
-
-.contacts__phone:hover {
-  text-decoration: underline;
+.sort__link {
+  color: var(--basic-black-active);
+  border-bottom: 1px dashed var(--basic-marine);
 }
 
-/* socials */
-.socials__button {
+.sort__link:hover {
+  color: var(--basic-marine);
+}
+
+.sort__link:active {
+  color: var(--basic-black);
+  border: none;
+}
+
+.hotels__item {
+  border-top: 1px solid var(--basic-pink-grey);
+}
+
+.hotels__item:last-child {
+  border-top: 1px solid var(--basic-pink-grey);
+  border-bottom: 1px solid var(--basic-pink-grey);
+}
+
+.hotels__link {
+  line-height: 26px;
+}
+
+.hotels__link:hover {
+  color: var(--basic-marine);
+}
+
+.hotels__link:active {
+  color: var(--basic-black-active);
+}
+
+
+/* hotels__button */
+.hotels__button {
+  font-weight: 700;
   color: var(--basic-white);
+}
+
+.more {
   background-color: var(--basic-marine);
 }
 
-.socials__button:hover {
+.more:hover {
   background-color: var(--basic-marine-hover);
 }
 
-.socials__button:active {
+.more:active {
   color: var(--basic-white-active);
   background-color: var(--basic-marine-active);
 }
 
+.book {
+  background-color: var(--basic-brown);
+}
+
+.book:hover {
+  background-color: var(--basic-brown-hover);
+}
+
+.book:active {
+  color: var(--basic-white-active);
+  background-color: var(--basic-brown-active);
+}
+
+.hotels__rating {
+  width: 110px;
+  min-height: 27px;
+  line-height: 27px; /* для временной центровки по вертикали (в макете 21px) */
+  text-align: center;
+  color: var(--basic-grey-rating);
+  background-color: var(--basic-grey-body);
+}
 /* В будущем не забыть добавить серый фон фотографиям и карте */
 
 
