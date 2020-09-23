@@ -31,6 +31,7 @@
   --basic-grey-rating: #666666;
   --basic-grey-extra: #eeeeee;
   --basic-pink-grey: #e5e5e5;
+  --basic-grey-active: #BDBBBC;
   
   --basic-white: #ffffff;
   --basic-white-active: rgba(255, 255, 255, 0.3);
@@ -48,7 +49,7 @@
 }
 
 /* ALL PAGE */
-.body {
+.page__body {
   min-width: 1280px;
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
@@ -70,23 +71,23 @@
   box-shadow: var(--page-shadow);
 }
 
-.body a {
+.page__body a {
   text-decoration: none;
 }
 
-.body img {
+.page__body img {
   max-width: 100%;
   height: auto;
 }
 
 /* временные отступы */
-.body h2,
-.body h3 {
+.page__body h2,
+.page__body h3 {
   margin: 0;
   padding: 20px 0 14px; 
 }
 
-.body p {
+.page__body p {
   margin: 0;
 }
 
@@ -97,17 +98,17 @@
   list-style: none;
 }
 
-/* для скрытия элементов
+/* для скрытия элементов */
 .hidden {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px); / IE6, IE7 /
+	position: absolute;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	padding: 0;
 	border: 0;
 	height: 1px; 
 	width: 1px; 
 	overflow: hidden;
-} */
+} 
 
 .active {
   color: var(--basic-brown);
@@ -173,9 +174,26 @@
 }
 
 /* socials */
+.socials__item { /* временное решение */
+  display: inline-block;
+  margin: 3px;
+}
+
 .socials__button {
+  display: inline-block;
+  position: relative;
+  width: 46px;
+  height: 48px;
   color: var(--basic-white);
   background-color: var(--basic-marine);
+  
+}
+
+.socials__icon { /* временное решение */
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+  fill: var(--basic-white);
 }
 
 .socials__button:hover {
@@ -185,6 +203,16 @@
 .socials__button:active {
   color: var(--basic-white-active);
   background-color: var(--basic-marine-active);
+  --basic-white: var(--basic-white-active);
+}
+
+/* copyrighting */
+.copyrighting__icon:hover {
+  fill: var(--basic-marine);
+}
+
+.copyrighting__icon:active {
+  fill: var(--basic-grey-active);
 }
 
 /* -- STYLES OF PAGE -- INDEX -- */
@@ -267,7 +295,7 @@
   background-color: var(--basic-brown-active);
 }
 
-/* -- STYLES PAGE -- HOTELS -- */
+/* -- STYLES OF PAGE -- HOTELS -- */
 .hotels__main {
   padding-left: 73px; /* временно */
 }
@@ -296,7 +324,7 @@
 
 .sort__link {
   color: var(--basic-black-active);
-  border-bottom: 1px dashed var(--basic-marine);
+  border-bottom: 1px dotted var(--basic-marine);
 }
 
 .sort__link:hover {
