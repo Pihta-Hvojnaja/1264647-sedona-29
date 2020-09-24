@@ -84,7 +84,7 @@
 .page__body h2,
 .page__body h3 {
   margin: 0;
-  padding: 20px 0 14px; 
+  padding: 14px 0 14px; 
 }
 
 .page__body p {
@@ -180,7 +180,7 @@
 }
 
 .socials__button {
-  display: inline-block;
+  display: block;
   position: relative;
   width: 46px;
   height: 48px;
