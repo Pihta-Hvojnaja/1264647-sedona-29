@@ -16,7 +16,7 @@
           <img src="img/site_logo.svg" width="138" height="70" alt="Логотип сайта города Седона">
         </a>
       
-        <ul class="nav__list reset">
+        <ul class="nav__list reset__list">
           <li class="nav__item"><a class="nav__link" href="">Информация</a></li>
           <li class="nav__item"><a class="nav__link" href="">Фото и видео</a></li>
           <li class="nav__item"><a class="nav__link" href="">Карта штата</a></li>
@@ -37,32 +37,30 @@
       </section>
       
       <section class="advantages">
-        <p class="advantages__slogan bold">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+        <p class="advantages__slogan title">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
         <h2>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</h2>
 
-        <ul class="advantages__list reset">
+        <ul class="advantages__list reset__list">
           <li class="advantages__item__another">
             <div class="advantages__wrapper advantages__wrapper__left">
-              <h3>Настоящий городок</h3>
-              <p>— №1 —</p>
-              <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+              <h3 class="advantages__reason">Настоящий городок</h3>
+              <p class="advantages__number">— №1 —</p>
+              <p class="advantages__description">Седона - не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
             
-            <div class="advantages__img">
-              <img src="img/hotels_content.jpg" width="800" height="256" alt="Прекрасные отели Седоны">
-            </div>
+            <img class="advantages__img" src="img/hotels_content.jpg" width="800" height="256" alt="Прекрасные отели Седоны">
 
-            <ul class="features reset">
-              <li class="features__item">
-                <h3 class="bold">Жильё</h3>
+            <ul class="features reset__list">
+              <li class="features__item features__housing">
+                <h3 class="title">Жильё</h3>
                 <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
-              <li class="features__item">
-                <h3 class="bold">Еда</h3>
+              <li class="features__item features__food">
+                <h3 class="title">Еда</h3>
                 <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
               </li>
-              <li class="features__item">
-                <h3 class="bold">Сувениры</h3>
+              <li class="features__item features__souvenirs">
+                <h3 class="title">Сувениры</h3>
                 <p>Не только китайского, но и местного производства!</p>
               </li>
             </ul> 
@@ -70,39 +68,38 @@
           
           <li class="advantages__item__another"> 
             <div class="advantages__wrapper advantages__wrapper__right">
-              <h3>Там есть Мост Диавола</h3>
-              <p>— №2 —</p>
-              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+              <h3 class="advantages__reason">Там есть <br>Мост Диавола</h3>
+              <p class="advantages__number">— №2 —</p>
+              <p class="advantages__description">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
             </div>
-          
-            <div class="advantages__img">  
-              <img src="img/bridge_content.jpg" width="800" height="256" alt="Мост Диавола">
-            </div>
+                       
+            <img class="advantages__img" src="img/bridge_content.jpg" width="800" height="256" alt="Мост Диавола">
+            
           </li>
           
           <li class="advantages__item">
-            <h3 class="bold">Небольшая площадь</h3>
-            <p>— №3 —</p>
-            <p>Все достопримечательности находятся очень близко</p>
+            <h3 class="advantages__reason title">Небольшая площадь</h3>
+            <p class="advantages__number">— №3 —</p>
+            <p class="advantages__description">Все достопримечательности находятся очень близко</p>
           </li>
           
           <li class="advantages__item">
-            <h3 class="bold">Красивая дорога</h3>
-            <p>— №4 —</p>
-            <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+            <h3 class="advantages__reason title">Красивая дорога</h3>
+            <p class="advantages__number">— №4 —</p>
+            <p class="advantages__description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
           
           <li class="advantages__item">
-            <h3 class="bold">Мало туристов</h3>
-            <p>— №5 —</p>
-            <p>Большинство едет в Гранд Каньон и толпится там</p>
+            <h3 class="advantages__reason title">Мало туристов</h3>
+            <p class="advantages__number">— №5 —</p>
+            <p class="advantages__description">Большинство едет в Гранд Каньон и толпится там</p>
           </li>
         </ul>
       </section>
 
       <section class="search">
         <h2>Заинтересовались?</h2>
-        <p class="search__info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <p class="search__info">Укажите предполагаемые даты поездки, <br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         
         <button class="search__button toggle__modal" type="button">Поиск гостиницы в Седоне</button>
         <!-- Здесь будут формы, class="search__modal"-->
@@ -118,13 +115,13 @@
       
       <section class="contacts">
         <h2 class="hidden">Контактная информация</h2>
-        <p class="contacts__p bold">#visitSEDONA</p>
-        <address class="contacts__address bold">ТЕЛ: <a class="contacts__phone" href="tel:+74956660166">+7(495) 666-01-66</a></address>
+        <p class="contacts__p title">#visitSEDONA</p>
+        <address class="contacts__address title">ТЕЛ: <a class="contacts__phone" href="tel:+74956660166">+7(495) 666-01-66</a></address>
       </section>
       
       <section class="socials">
         <h2 class="hidden">Давайте дружить!</h2>
-        <ul class="socials__list reset">
+        <ul class="socials__list reset__list">
           <li class="socials__item">
             <a class="socials__button" href="#">
               <span class="hidden">Twitter</span>

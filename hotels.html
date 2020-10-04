@@ -16,7 +16,7 @@
           <img src="img/site_logo.svg" width="138" height="70" alt="Логотип сайта города Седона">
         </a>
       
-        <ul class="nav__list reset">
+        <ul class="nav__list reset__list">
           <li class="nav__item"><a class="nav__link" href="">Информация</a></li>
           <li class="nav__item"><a class="nav__link" href="">Фото и видео</a></li>
           <li class="nav__item"><a class="nav__link" href="">Карта штата</a></li>
@@ -26,7 +26,7 @@
     </header>
 
     <!-- begining of MAIN -->    
-    <main class="hotels__main main">
+    <main class="main">
       <h1 class="hidden">Гостиницы Седоны</h1>
 
       <section class="filter">
@@ -38,47 +38,81 @@
         <h2 class="hidden">Список гостиниц Седоны</h2>
         
         <section class="sort">
-          <p class="sort__paragraph bold">Найдено: 3</p>
+          <p class="sort__paragraph title">Найдено: 3</p>
           <h3 class="sort__title">Сортировка:</h3>
-          <ul class="sort__list reset">
-            <li><a class="current" href="">По цене</a></li>
-            <li><a class="sort__link" href="">По типу</a></li>
-            <li><a class="sort__link" href="">По рейтингу</a></li>
+          <ul class="sort__list reset__list">
+            <li class="short__item"><a class="current" href="">По цене</a></li>
+            <li class="short__item"><a class="sort__link" href="">По типу</a></li>
+            <li class="short__item"><a class="sort__link" href="">По рейтингу</a></li>
           </ul>
+
+          <div class="transition">
+            <a class="transition__link transition__up" href="">
+              <span class="hidden">
+                Вверх
+              </span>
+            </a>
+            <a class="transition__link transition__down current" href="">
+              <span class="hidden">
+                Вниз
+              </span>
+            </a>
+          </div>
         </section>
 
-        <ul class="hotels__list reset">
+        <ul class="hotels__list reset__list">
           <li class="hotels__item">
-            <article>
-              <h3><a class="hotels__link bold" href="">Amara Resort & Spa</a></h3>
-              <p>Гостиница</p>
-              <p>От 4000 Р.</p>
-              <a class="hotels__button more" href="">Подробнее</a>
-              <a class="hotels__button book" href="">Забронировать</a>
-              <p class="hotels__rating">Рейтинг: 8,5</p>
-              <img src="img/amara_hotel.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
+            <article class="card">
+              <div class="card__wrap">
+                <h3 class="card__name"><a class="card__link title" href="">Amara Resort & Spa</a></h3>
+                <p class="card__info">Гостиница</p>
+                <p class="card__info">От 4000 Р.</p>
+                <a class="card__button more" href="">Подробнее</a>
+                <a class="card__button book" href="">Забронировать</a>
+              </div>
+              
+              <div class="card__rating">
+                <div class="star star__4"></div>
+                <p class="card__digit">Рейтинг: 8,5</p>
+              </div>
+              
+              <img class="card__img" src="img/amara_hotel.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
             </article> 
           </li>
           <li class="hotels__item">
-            <article>
-              <h3><a class="hotels__link bold" href="">Desert Quail Inn</a></h3>
-              <p>Мотель</p>
-              <p>От 3000 Р.</p>
-              <a class="hotels__button more" href="">Подробнее</a>
-              <a class="hotels__button book" href="">Забронировать</a>
-              <p class="hotels__rating">Рейтинг: 8,9</p>
-              <img src="img/desert_hotel.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
+            <article class="card">
+              <div class="card__wrap">
+                <h3 class="card__name"><a class="card__link title" href="">Desert Quail Inn</a></h3>
+                <p class="card__info">Мотель</p>
+                <p class="card__info">От 3000 Р.</p>
+                <a class="card__button more" href="">Подробнее</a>
+                <a class="card__button book" href="">Забронировать</a>
+              </div>
+
+              <div class="card__rating">
+                <div class="star star__3"></div>
+                <p class="card__digit">Рейтинг: 8,9</p>
+              </div>
+              
+              <img class="card__img" src="img/desert_hotel.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
             </article> 
           </li>
           <li class="hotels__item">
-            <article>
-              <h3><a class="hotels__link bold" href="">Villas at Poco Diablo</a></h3>
-              <p>Апартаменты</p>
-              <p>От 2000 Р.</p>
-              <a class="hotels__button more" href="">Подробнее</a>
-              <a class="hotels__button book" href="">Забронировать</a>
-              <p class="hotels__rating">Рейтинг: 9,2</p>
-              <img src="img/villas_hotel.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablo">
+            <article class="card">
+              <div class="card__wrap">
+                <h3 class="card__name"><a class="card__link title" href="">Villas at Poco Diablo</a></h3>
+                <p class="card__info">Апартаменты</p>
+                <p class="card__info">От 2000 Р.</p>
+                <a class="card__button more" href="">Подробнее</a>
+                <a class="card__button book" href="">Забронировать</a>
+              </div>
+            
+              <div class="card__rating">
+                <div class="star star__2"></div>
+                <p class="card__digit">Рейтинг: 9,2</p>
+              </div>
+
+              <img class="card__img" src="img/villas_hotel.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablo">
             </article> 
           </li>
         </ul>
@@ -90,13 +124,13 @@
       
       <section class="contacts">
         <h2 class="hidden">Контактная информация</h2>
-        <p class="contacts__p bold">#visitSEDONA</p>
-        <address class="contacts__address bold">ТЕЛ: <a class="contacts__phone" href="tel:+74956660166">+7(495) 666-01-66</a></address>
+        <p class="contacts__p title">#visitSEDONA</p>
+        <address class="contacts__address title">ТЕЛ: <a class="contacts__phone" href="tel:+74956660166">+7(495) 666-01-66</a></address>
       </section>
       
       <section class="socials">
         <h2 class="hidden">Давайте дружить!</h2>
-        <ul class="socials__list reset">
+        <ul class="socials__list reset__list">
           <li class="socials__item">
             <a class="socials__button" href="#">
               <span class="hidden">Twitter</span>
