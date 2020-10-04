@@ -510,16 +510,13 @@
 }
 
 /* hotels */
-.hotels {
-  padding: 0 73px;
-}
-
 /* sort */
 .sort {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   min-height: 87px;
+  padding: 0 73px;
   border-bottom: 1px solid var(--basic-pink-grey);
 }
 
@@ -547,7 +544,7 @@
   flex-wrap: wrap;
   align-items: flex-end;
   width: 249px;
-  margin-right: 400px;
+  margin-right: auto;
 }
 
 .short__item:not(:last-child) {
@@ -613,6 +610,7 @@
 
 /* hotels__item */
 .hotels__item {
+  padding: 0 73px;
   border-bottom: 1px solid var(--basic-pink-grey);
 }
 
@@ -634,7 +632,7 @@
   order: 2;
   width: 258px;
   min-height: 96px;
-  margin-right: 505px;
+  margin-right: auto;
 }
 
 .card__name {
@@ -709,7 +707,7 @@
 /* star */
 .star {
   height: 17px;
-  margin-bottom: 45px;
+  margin-bottom: auto;
   background-image: url("../img/star.svg");
   background-repeat: space;
   background-position: 0 0;
