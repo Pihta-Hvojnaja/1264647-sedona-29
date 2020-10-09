@@ -32,6 +32,7 @@
   --basic-grey-rating: #666666;
   --basic-grey-extra: #eeeeee;
   --basic-pink-grey: #e5e5e5;
+  --basic-grey-hover: #ebebeb;
   --basic-grey-active: #bdbbbc;
   
   --basic-white: #ffffff;
@@ -39,6 +40,7 @@
   --basic-white-footer: rgba(255, 255, 255, 0.9);
   
   --basic-brown: #766357;
+  --basic-brown-count: #a9a9a9;
   --basic-brown-hover: #604e43;
   --basic-brown-active: #503e33;
   
@@ -48,6 +50,7 @@
 
   /* shadow */
   --page-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+  --modal-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
 }
 
 /* ALL PAGE */
@@ -118,6 +121,13 @@
   font-size: 21px;
   font-weight: 700;
   color: var(--basic-black); 
+}
+
+.focus:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px var(--basic-white),
+    0 0 0 4px var(--basic-marine);
 }
 
 /* THE HEADER OF THE PAGES */
@@ -449,7 +459,7 @@
 /* search */
 .search {
   position: relative;
-  padding: 58px 0 473px;
+  padding: 58px 0 78px;
 }
 
 .search h2 {
@@ -493,12 +503,173 @@
   background-color: var(--basic-brown-active);
 }
 
+/* form */
+.search__modal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
+  position: relative;
+  z-index: 1;
+  width: 568px;
+  min-height: 395px;
+  margin: 0 auto;
+  padding: 55px;
+  font: inherit;
+  line-height: 26px;
+  font-weight: 700;
+  text-align: left;
+  word-wrap: break-word; /* */
+  background-color: var(--basic-white);
+  box-shadow: var(--modal-shadow);
+}
+
+.search__label {
+  width: 100px;
+  margin-right: 12px;
+}
+
+.search__label__children {
+  width: 60px;
+  margin-right: 5px;
+}
+
+.search__wrap {
+  position: relative;
+}
+
+.search__wrap__adult {
+  margin-right: auto;
+}
+
+.search__date {
+  width: 346px;
+  height: 38px;
+  padding: 13px 35px 13px 12px;
+  font: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+  background-color: var(--basic-grey-body);
+  border: none;
+}
+
+.search__date:hover,
+.search__count:hover {
+  background-color: var(--basic-grey-hover);
+}
+
+.search__date:focus,
+.search__count:focus {
+  background-color: var(--basic-white);
+  outline: none;
+  border: 2px solid var(--basic-pink-grey);
+}
+
+.search__btn__calendar {
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  width: 21px;
+  height: 23px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.search__btn__calendar:hover path {
+  fill: var(--basic-black);
+}
+
+.search__btn__calendar:active path {
+  fill: var(--basic-marine);
+}
+
+.search__count {
+  width: 114px;
+  height: 38px;
+  padding: 6px 30px;
+  font: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--basic-grey-body);
+  border: none;
+}
+
+.search__btn__minus {
+  position: absolute;
+  top: 18px;
+  left: 13px;
+  width: 12px;
+  height: 3px;
+  background-color: var(--basic-brown-count);
+}
+
+.search__btn__plus {
+  position: absolute;
+  top: 18px;
+  right: 13px;
+  width: 11px;
+  height: 3px;
+  background-color: var(--basic-brown-count);
+}
+
+.search__btn__plus::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 3px;
+  transform: rotate(90deg);
+  background-color: var(--basic-brown-count);
+}
+
+.search__btn__minus:hover,
+.search__btn__plus:hover,
+.search__btn__plus:hover::before {
+  background-color: var(--basic-black);
+}
+
+.search__btn__minus:focus,
+.search__btn__plus:focus,
+.search__btn__plus:focus::before {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--basic-white), 
+    0 0 1px 2px var(--basic-marine);
+}
+
+.search__btn__minus:active,
+.search__btn__plus:active,
+.search__btn__plus:active::before {
+  background-color: var(--basic-marine);
+}
+
+.modal__btn {
+  width: 458px;
+  height: 58px;
+  margin-top: 24px;
+  padding: 0;
+  background-color: var(--basic-marine);
+}
+
+.modal__btn:hover {
+  background-color: var(--basic-marine-hover);
+}
+
+.modal__btn:active {
+  color: var(--basic-white-active);
+  background-color: var(--basic-marine-active);
+}
+
 .search__map {
   position: absolute;
   left: 0;
   bottom: -120px;
   min-width: 1200px;
   height: 593px;
+  border: none;
 }
 
 /* -- STYLES OF PAGE -- HOTELS -- */
