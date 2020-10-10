@@ -123,11 +123,18 @@
   color: var(--basic-black); 
 }
 
-.focus:focus {
+.focus__big:focus {
   outline: none;
   box-shadow: 
     0 0 0 2px var(--basic-white),
     0 0 0 4px var(--basic-marine);
+}
+
+.focus__small:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--basic-white), 
+    0 0 1px 2px var(--basic-marine);
 }
 
 /* THE HEADER OF THE PAGES */
@@ -488,17 +495,17 @@
   border: none;
 }
 
-.toggle__modal {
+.search__button__toggle {
   width: 568px;
   padding: 30px 0;
   background-color: var(--basic-brown);
 }
 
-.toggle__modal:hover {
+.search__button__toggle:hover {
   background-color: var(--basic-brown-hover);
 }
 
-.toggle__modal:active {
+.search__button__toggle:active {
   color: var(--basic-white-active);
   background-color: var(--basic-brown-active);
 }
@@ -519,9 +526,14 @@
   line-height: 26px;
   font-weight: 700;
   text-align: left;
-  word-wrap: break-word; /* */
+  word-wrap: break-word;
   background-color: var(--basic-white);
   box-shadow: var(--modal-shadow);
+}
+
+.search__modal input::placeholder {
+  color: var(--basic-black);
+  opacity: 1;
 }
 
 .search__label {
@@ -568,13 +580,20 @@
 
 .search__btn__calendar {
   position: absolute;
-  top: 7px;
-  right: 9px;
-  width: 21px;
-  height: 23px;
+  top: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
   padding: 0;
   background-color: transparent;
   border: none;
+}
+
+.search__btn__calendar svg {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; 
+  margin: auto;
 }
 
 .search__btn__calendar:hover path {
@@ -599,54 +618,71 @@
 }
 
 .search__btn__minus {
+  content: "";
   position: absolute;
-  top: 18px;
-  left: 13px;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+}
+
+.search__btn__minus::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; 
   width: 12px;
   height: 3px;
+  margin: auto;
   background-color: var(--basic-brown-count);
 }
 
 .search__btn__plus {
+  content: "";
   position: absolute;
-  top: 18px;
-  right: 13px;
-  width: 11px;
-  height: 3px;
-  background-color: var(--basic-brown-count);
+  top: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  background-color: transparent;
+  border: none;
 }
 
 .search__btn__plus::before {
   content: "";
   position: absolute;
-  width: 11px;
+  top: 0; right: 0; bottom: 0; left: 0; 
+  width: 12px;
   height: 3px;
+  margin: auto;
+  background-color: var(--basic-brown-count);
+}
+
+.search__btn__plus::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; 
+  width: 12px;
+  height: 3px;
+  margin: auto;
   transform: rotate(90deg);
   background-color: var(--basic-brown-count);
 }
 
-.search__btn__minus:hover,
-.search__btn__plus:hover,
-.search__btn__plus:hover::before {
+.search__btn__minus:hover::before,
+.search__btn__plus:hover::before,
+.search__btn__plus:hover::after {
   background-color: var(--basic-black);
 }
 
-.search__btn__minus:focus,
-.search__btn__plus:focus,
-.search__btn__plus:focus::before {
-  outline: none;
-  box-shadow:
-    0 0 0 1px var(--basic-white), 
-    0 0 1px 2px var(--basic-marine);
-}
-
-.search__btn__minus:active,
-.search__btn__plus:active,
-.search__btn__plus:active::before {
+.search__btn__minus:active::before,
+.search__btn__plus:active::before,
+.search__btn__plus:active::after {
   background-color: var(--basic-marine);
 }
 
-.modal__btn {
+.search__button__modal {
   width: 458px;
   height: 58px;
   margin-top: 24px;
@@ -654,11 +690,11 @@
   background-color: var(--basic-marine);
 }
 
-.modal__btn:hover {
+.search__button__modal:hover {
   background-color: var(--basic-marine-hover);
 }
 
-.modal__btn:active {
+.search__button__modal:active {
   color: var(--basic-white-active);
   background-color: var(--basic-marine-active);
 }
@@ -673,6 +709,11 @@
 }
 
 /* -- STYLES OF PAGE -- HOTELS -- */
+/* hotels__main*/
+.hotels__main {
+  word-wrap: break-word;
+}
+
 /* filter */
 .filter {
   min-height: 217px; 
@@ -791,14 +832,13 @@
   flex-wrap: wrap;
   align-items: flex-start;
   padding: 24px 0 30px;
-  word-wrap: break-word;
 }
 
 .card__wrap {
   display: grid;
   grid-template-columns: 110px 142px;
-  grid-template-rows: 1fr 1fr auto;
-  gap: 6px;
+  grid-template-rows: auto auto auto;
+  column-gap: 6px;
   align-content: center;
   order: 2;
   width: 258px;
@@ -808,6 +848,7 @@
 
 .card__name {
   margin: 0;
+  margin-bottom: 6px;
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -826,6 +867,7 @@
 
 .card__info {
   margin: 0;
+  margin-bottom: 16px;
 }
 
 /* card__button */
