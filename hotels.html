@@ -12,7 +12,7 @@
     <!-- begining of HEADER -->
     <header class="header">
       <nav class="nav">
-        <a class="nav__logo focus__small" href="index.html">
+        <a class="nav__logo" href="index.html">
           <img src="img/site_logo.svg" width="138" height="70" alt="Логотип сайта города Седона">
         </a>
       
@@ -31,7 +31,60 @@
 
       <section class="filter">
         <h2 class="hidden">Фильтр гостиниц</h2>
-        <!-- Здесь будут формы -->
+        
+        <form class="filter__form" action="https://echo.htmlacademy.ru" method="get">
+          <fieldset class="filter__infrastructure">
+            <legend>Инфраструктура:</legend>
+            <ul class="reset__list">
+              <li class="filter__option">
+                <input class="" type="checkbox" id="pool" name="pool" checked>
+                <label class="" for="pool">Бассейн</label>
+              </li>
+
+              <li class="filter__option">
+                <input class="" type="checkbox" id="parking" name="parking">
+                <label class="" for="parking">Парковка</label>
+              </li>
+
+              <li class="filter__option">
+                <input class="" type="checkbox" id="wi__fi" name="wi__fi">
+                <label class="" for="wi__fi">Wi-Fi</label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filter__housing">
+            <legend>Тип жилья:</legend>
+            <ul class="reset__list">
+              <li class="filter__option">
+                <input class="" type="checkbox" id="hotel" name="hotel" checked>
+                <label class="" for="hotel">Гостиница</label>
+              </li>
+
+              <li class="filter__option">
+                <input class="" type="checkbox" id="motel" name="motel" checked>
+                <label class="" for="motel">Мотель</label>
+              </li>
+
+              <li class="filter__option">
+                <input class="" type="checkbox" id="apartments" name="apartments" checked>
+                <label class="" for="apartments">Апартаменты</label>
+              </li>
+            </ul>
+          </fieldset>
+          
+          <div class="filter__wrap">
+   
+            <h3>Стоимость в сутки (Р):</h3>
+            <input class="filter__submit" type="submit" value="Показать">     
+          </div>      
+          
+        </form>
+
+
+
+
+        
       </section>
 
       <section class="hotels">

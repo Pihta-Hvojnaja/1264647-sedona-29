@@ -563,7 +563,7 @@
   font-weight: inherit;
   text-transform: uppercase;
   background-color: var(--basic-grey-body);
-  border: none;
+  border: 2px solid var(--basic-grey-body);
 }
 
 .search__date:hover,
@@ -575,7 +575,7 @@
 .search__count:focus {
   background-color: var(--basic-white);
   outline: none;
-  border: 2px solid var(--basic-pink-grey);
+  border-color: var(--basic-pink-grey);
 }
 
 .search__btn__calendar {
@@ -614,7 +614,7 @@
   text-transform: uppercase;
   text-align: center;
   background-color: var(--basic-grey-body);
-  border: none;
+  border: 2px solid var(--basic-grey-body);
 }
 
 .search__btn__minus {
@@ -716,9 +716,53 @@
 
 /* filter */
 .filter {
-  min-height: 217px; 
+  min-height: 217px;
+  padding: 27px 72px 32px 72px; 
+  color: var(--basic-white);
   background-color: var(--basic-marine);
   background-image: url("../img/backgr_filter.jpg");
+}
+
+.filter__form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter__form fieldset {
+  width: 254px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.filter__form fieldset:last-of-type {
+  margin-right: auto;
+}
+
+.filter__wrap {
+  width: 327px;
+}
+
+.filter__form legend,
+.filter__form h3 {
+  margin-bottom: 24px;;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.filter__option:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.filter__submit {
+  width: 137px;
+  height: 36px;
+  font: inherit;
+  text-transform: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 2px solid var(--basic-white);
+  border-radius: 2px;
 }
 
 /* hotels */
@@ -838,7 +882,7 @@
   display: grid;
   grid-template-columns: 110px 142px;
   grid-template-rows: auto auto auto;
-  column-gap: 6px;
+  gap: 6px;
   align-content: center;
   order: 2;
   width: 258px;
@@ -848,7 +892,6 @@
 
 .card__name {
   margin: 0;
-  margin-bottom: 6px;
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -867,7 +910,7 @@
 
 .card__info {
   margin: 0;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 /* card__button */
