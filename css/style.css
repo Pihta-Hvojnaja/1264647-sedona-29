@@ -30,6 +30,8 @@
   --basic-grey-body: #f2f2f2;
   --basic-color-triangle: #cacaca;
   --basic-grey-rating: #666666;
+  --basic-grey-span: #ababab;
+  --basic-grey-span-shadow: rgba(171, 171, 171, 0.3);
   --basic-grey-extra: #eeeeee;
   --basic-pink-grey: #e5e5e5;
   --basic-grey-hover: #ebebeb;
@@ -155,6 +157,17 @@
   z-index: 1;
   margin: auto;
   max-width: 138px;
+}
+
+.nav__logo[href] {
+  transition-duration: 1s;
+}
+
+.nav__logo[href]:hover,
+.nav__logo[href]:focus {
+  outline: none;
+  transform: scale(1.2);
+  transition-duration: 1.5s;
 }
 
 .nav__list {
@@ -729,40 +742,198 @@
 }
 
 .filter__form fieldset {
-  width: 254px;
   margin: 0;
   padding: 0;
   border: none;
 }
 
-.filter__form fieldset:last-of-type {
+.filter__form fieldset:not(.filter__cost) {
+  width: 254px;
+}
+
+.filter__form > fieldset:last-of-type {
   margin-right: auto;
 }
 
-.filter__wrap {
-  width: 327px;
-}
-
-.filter__form legend,
-.filter__form h3 {
-  margin-bottom: 24px;;
+.filter__form legend {
   font-size: 16px;
   font-weight: 700;
+}
+
+.filter__form legend:not(.filter__cost__legend) {
+  margin-bottom: 24px;
+}
+
+.filter__option {
+  position: relative;
+  padding-left: 40px;
 }
 
 .filter__option:not(:last-child) {
   margin-bottom: 25px;
 }
 
+.filter__input__checkbox + label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 27px;
+  height: 23px;
+  background-image: url("../img/checkbox_off.svg");
+  background-repeat: no-repeat;
+  background-size: 23px 23px;
+  background-position: top left;
+}
+
+.filter__input__checkbox:checked + label::before {
+  background-image: url("../img/checkbox_on.svg");
+  background-size: 27px 23px;
+}
+
+.filter__input__checkbox:disabled + label::before {
+  background-image: url("../img/checkbox_off_disabled.svg");
+}
+
+.filter__input__checkbox:checked:disabled + label::before {
+  background-image: url("../img/checkbox_on_disabled.svg");
+  background-size: 27px 23px;
+}
+
+.filter__input__checkbox:hover + label,
+.filter__input__checkbox:focus + label {
+  border-top: 2px solid var(--basic-white);
+  border-bottom: 2px solid var(--basic-white);
+}
+
+.filter__input__checkbox:disabled + label,
+.filter__input__checkbox:checked:disabled + label {
+  opacity: 0.6;
+  border: none;
+}
+
+.filter__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 327px;
+}
+
+.filter__cost__legend {
+  margin-bottom: 10px;
+}
+
+.filter__range {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 317px;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  border: 2px solid var(--basic-white);
+}
+
+.filter__range label {
+  width: 50%;
+  text-align: right;
+}
+
+.filter__label__after {
+  padding: 0 5px;
+  border-right: 2px solid var(--basic-white);
+}
+
+.filter__label__before {
+  padding: 0 15px 0 5px;
+}
+
+.filter__range input {
+  width: 65px;
+  height: 22px;
+  padding: 0;
+  color: var(--basic-white);
+  background-color: transparent;
+  border: none;
+}
+
+.filter__range input::placeholder {
+  color: var(--basic-white);
+  opacity: 1;
+}
+
+.filter__range input:hover,
+.filter__range input:focus {
+  outline: none;
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--basic-white-active);
+}
+
+/* ползунок */
+.span {
+  position: relative;
+  width: 316px;
+  height: 22px;
+  padding: 10px 0;
+}
+
+.span__scale {
+  width: 100%;
+  height: 2px;
+  background-color: var(--basic-white-active);
+}
+
+.span__bar {
+  width: 252px;
+  height: 2px;
+  background-color: var(--basic-white);
+}
+
+.span__toggle {
+  position: absolute;
+  top: 1px;
+  box-sizing: content-box;
+  width: 4px;
+  height: 4px;
+  background-color: var(--basic-grey-span);
+  border: 7px solid var(--basic-white);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 var(--basic-grey-span-shadow);
+}
+
+.span__toggle__min {
+  left: 0;
+}
+
+.span__toggle__max {
+ left: 252px;
+}
+
+.span__toggle:hover,
+.span__toggle:focus {
+  outline: none;
+  transform: scale(1.2);
+  transition-duration: 1.3s;
+}
+
 .filter__submit {
+  align-self: center;
   width: 137px;
-  height: 36px;
+  height: 34px;
   font: inherit;
   text-transform: inherit;
   color: inherit;
   background-color: transparent;
   border: 2px solid var(--basic-white);
   border-radius: 2px;
+}
+
+.filter__submit:hover,
+.filter__submit:focus {
+  outline: none;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
 }
 
 /* hotels */
@@ -849,18 +1020,19 @@
   border-bottom-width: 0;
 }
 
-.transition__up:hover,
-.transition__down:hover {
+.transition__link:hover,
+.transition__link:focus {
+  outline: none;
+  transform: scale(1.5);
+  transition-duration: 1.2s;
   --basic-color-triangle: var(--basic-black);
 }
 
-.transition__up:active,
-.transition__down:active {
+.transition__link:active {
   --basic-color-triangle: var(--basic-marine);
 }
 
-.transition__up.current,
-.transition__down.current {
+.transition__link.current {
   --basic-color-triangle: var(--basic-marine);
 }
 

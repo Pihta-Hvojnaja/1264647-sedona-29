@@ -35,56 +35,72 @@
         <form class="filter__form" action="https://echo.htmlacademy.ru" method="get">
           <fieldset class="filter__infrastructure">
             <legend>Инфраструктура:</legend>
+            
             <ul class="reset__list">
               <li class="filter__option">
-                <input class="" type="checkbox" id="pool" name="pool" checked>
-                <label class="" for="pool">Бассейн</label>
+                <input class="filter__input__checkbox hidden" type="checkbox" id="pool" name="pool" checked>
+                <label for="pool">Бассейн</label>
               </li>
 
               <li class="filter__option">
-                <input class="" type="checkbox" id="parking" name="parking">
-                <label class="" for="parking">Парковка</label>
+                <input class="filter__input__checkbox hidden" type="checkbox" id="parking" name="parking">
+                <label for="parking">Парковка</label>
               </li>
 
               <li class="filter__option">
-                <input class="" type="checkbox" id="wi__fi" name="wi__fi">
-                <label class="" for="wi__fi">Wi-Fi</label>
+                <input class="filter__input__checkbox hidden" type="checkbox" id="wi__fi" name="wi__fi">
+                <label for="wi__fi">Wi-Fi</label>
               </li>
             </ul>
           </fieldset>
 
           <fieldset class="filter__housing">
             <legend>Тип жилья:</legend>
+            
             <ul class="reset__list">
               <li class="filter__option">
-                <input class="" type="checkbox" id="hotel" name="hotel" checked>
-                <label class="" for="hotel">Гостиница</label>
+                <input class="filter__input__checkbox hidden" type="checkbox" id="hotel" name="hotel" checked>
+                <label for="hotel">Гостиница</label>
               </li>
 
               <li class="filter__option">
-                <input class="" type="checkbox" id="motel" name="motel" checked>
-                <label class="" for="motel">Мотель</label>
+                <input class="filter__input__checkbox hidden" type="checkbox" id="motel" name="motel" checked>
+                <label for="motel">Мотель</label>
               </li>
 
               <li class="filter__option">
-                <input class="" type="checkbox" id="apartments" name="apartments" checked>
-                <label class="" for="apartments">Апартаменты</label>
+                <input class="filter__input__checkbox hidden" type="checkbox" id="apartments" name="apartments" checked>
+                <label for="apartments">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
           
-          <div class="filter__wrap">
-   
-            <h3>Стоимость в сутки (Р):</h3>
+          <div class="filter__wrap"> 
+            <fieldset class="filter__cost">
+              <legend class="filter__cost__legend">Стоимость в сутки (Р):</legend>
+
+              <div class="filter__range">
+                <label class="filter__label__after">
+                  от <input type="text" name="cost__after" maxlength="7" placeholder="0" autocomplete="off">
+                </label>
+
+                <label class="filter__label__before">
+                  до <input type="text" name="cost__before" maxlength="7" placeholder="3000" autocomplete="off">
+                </label>
+              </div>
+
+              <div class="span">
+                <div class="span__scale">
+                  <div class="span__bar"></div>
+                </div>
+                <div class="span__toggle span__toggle__min" tabindex="0"></div>
+                <div class="span__toggle span__toggle__max" tabindex="0"></div>
+              </div>
+            </fieldset>
+            
             <input class="filter__submit" type="submit" value="Показать">     
           </div>      
-          
         </form>
-
-
-
-
-        
       </section>
 
       <section class="hotels">
@@ -120,8 +136,8 @@
                 <h3 class="card__name"><a class="card__link title" href="">Amara Resort & Spa</a></h3>
                 <p class="card__info">Гостиница</p>
                 <p class="card__info">От 4000 Р.</p>
-                <a class="card__button more" href="">Подробнее</a>
-                <a class="card__button book" href="">Забронировать</a>
+                <a class="card__button more focus__big" href="">Подробнее</a>
+                <a class="card__button book focus__big" href="">Забронировать</a>
               </div>
               
               <div class="card__rating">
@@ -138,8 +154,8 @@
                 <h3 class="card__name"><a class="card__link title" href="">Desert Quail Inn</a></h3>
                 <p class="card__info">Мотель</p>
                 <p class="card__info">От 3000 Р.</p>
-                <a class="card__button more" href="">Подробнее</a>
-                <a class="card__button book" href="">Забронировать</a>
+                <a class="card__button more focus__big" href="">Подробнее</a>
+                <a class="card__button book focus__big" href="">Забронировать</a>
               </div>
 
               <div class="card__rating">
@@ -156,8 +172,8 @@
                 <h3 class="card__name"><a class="card__link title" href="">Villas at Poco Diablo</a></h3>
                 <p class="card__info">Апартаменты</p>
                 <p class="card__info">От 2000 Р.</p>
-                <a class="card__button more" href="">Подробнее</a>
-                <a class="card__button book" href="">Забронировать</a>
+                <a class="card__button more focus__big" href="">Подробнее</a>
+                <a class="card__button book focus__big" href="">Забронировать</a>
               </div>
             
               <div class="card__rating">
@@ -186,7 +202,7 @@
         <ul class="socials__list reset__list">
           <li class="socials__item">
             <a class="socials__button" href="#">
-              <span class="hidden">Twitter</span>
+              <span class="hidden">Мы в Twitter</span>
               <svg class="socials__icon" width="17" height="16" viewBox="0 0 17 16">
                 <path d="M10.95 1.14409C12.635 0.648089 13.934 1.41409 14.527 2.32309C15.2 2.09209 15.858 1.84209 16.538 1.61509C16.5249 2.30145 16.2117 2.94761 15.681 3.38309C16.366 3.55309 16.985 2.89209 16.985 2.89209C16.816 3.89209 15.979 4.68009 15.422 4.91609C15.191 11.6661 12.247 16.1331 5.34498 15.9981H4.89898C4.48898 15.9981 0.734977 15.5381 0.000976562 14.1111C2.27198 14.3071 3.89398 13.6891 4.69398 12.9341C3.73398 12.6341 2.01498 12.4571 1.71498 9.98409C2.06398 10.0901 2.27898 10.2121 2.90498 10.1031C1.70498 9.24709 0.373977 8.53009 0.447977 6.33009C0.732977 6.65809 1.51498 6.86609 1.78798 6.80209C1.08498 6.56109 -0.182023 3.44209 0.893977 1.85009C2.71198 3.70409 4.62898 5.45609 8.04598 5.62309C8.25398 3.33009 9.18298 1.79309 10.95 1.14409Z" 
                 />
@@ -195,7 +211,7 @@
           </li>
           <li class="socials__item">
             <a class="socials__button" href="#">
-              <span class="hidden">Facebook</span>
+              <span class="hidden">Мы в Facebook</span>
               <svg class="socials__icon" width="12" height="22" viewBox="0 0 12 22">
                 <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z"/>
               </svg>
@@ -203,7 +219,7 @@
           </li>
           <li class="socials__item">
             <a class="socials__button" href="#">
-              <span class="hidden">Youtube</span>
+              <span class="hidden">Мы в Youtube</span>
               <svg class="socials__icon" width="20" height="16" viewBox="0 0 20 16">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z" 
                 />
