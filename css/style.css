@@ -127,8 +127,8 @@
 
 .focus__shadow:focus {
   outline: none;
-  filter: drop-shadow(0 5px 4px var(--basic-black));
-  transition-duration: 1s;
+  filter: drop-shadow(0 5px 5px var(--basic-black));
+  transition-duration: 0.4s;
 }
 
 .focus__border:focus {
@@ -166,7 +166,7 @@
 .nav__logo[href]:focus {
   outline: none;
   filter: drop-shadow(0 5px 5px var(--basic-black));
-  transition-duration: 1s;
+  transition-duration: 0.4s;
 }
 
 .nav__list {
@@ -517,6 +517,12 @@
   background-color: var(--basic-brown-hover);
 }
 
+.search__button__toggle:focus {
+  outline: none;
+  filter: drop-shadow(0 -5px 5px var(--basic-black));
+  transition-duration: 0.4s;
+}
+
 .search__button__toggle:active {
   color: var(--basic-white-active);
   background-color: var(--basic-brown-active);
@@ -733,6 +739,9 @@
   color: var(--basic-white);
   background-color: var(--basic-marine);
   background-image: url("../img/backgr_filter.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .filter__form {
@@ -878,7 +887,7 @@
 }
 
 .span__scale {
-  width: 100%;
+  width: 316px;
   height: 2px;
   background-color: var(--basic-white-active);
 }
@@ -899,6 +908,7 @@
   border: 7px solid var(--basic-white);
   border-radius: 50%;
   box-shadow: 0 2px 1px 0 var(--basic-grey-span-shadow);
+  cursor: pointer;
 }
 
 .span__toggle__min {
@@ -912,8 +922,8 @@
 .span__toggle:hover,
 .span__toggle:focus {
   outline: none;
-  transform: scale(1.2);
-  transition-duration: 1s;
+  transform: scale(1.3);
+  transition-duration: 0.4s;
 }
 
 .filter__submit {
@@ -977,6 +987,12 @@
   margin-right: 32px;
 }
 
+.sort__item a {
+  background-color: var(--basic-white);
+  box-shadow: 
+    0 0 1px 6px var(--basic-white);
+}
+
 .sort__link {
   color: var(--basic-black-active);
   border-bottom: 1px dotted var(--basic-marine);
@@ -984,6 +1000,16 @@
 
 .sort__link:hover {
   color: var(--basic-marine);
+}
+
+.sort__item a:focus {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 
+    0 0 1px 6px var(--basic-white),
+    0 0 1px 7px var(--basic-marine-hover);
+  transition-duration: 0.4s;
 }
 
 .sort__link:active {
@@ -1023,7 +1049,7 @@
 .transition__link:focus {
   outline: none;
   transform: scale(1.5);
-  transition-duration: 1s;
+  transition-duration: 0.4s;
   --basic-color-triangle: var(--basic-black);
 }
 
