@@ -50,6 +50,8 @@
   --basic-marine-hover: #669ec0;
   --basic-marine-active: #5496bd;
 
+  --basic-arror: #8B0000;
+
   /* shadow */
   --page-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
   --modal-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
@@ -374,6 +376,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  position: relative;
+  z-index: 4;
   background-color: var(--basic-grey-extra);
 }
 
@@ -492,7 +496,14 @@
 .search {
   position: relative;
   min-height: 764px;
-  padding: 58px 0 78px;
+  padding: 0 0 78px;
+}
+
+.search__wrap {
+  position: relative;
+  z-index: 4;
+  padding-top: 58px;
+  background-color: var(--basic-white);
 }
 
 .search h2 {
@@ -501,7 +512,7 @@
   font-size: 30px;
   line-height: 24px;
   font-weight: 700;
-  color: var(--basic-black);
+  color: var(--basic-black); 
 }
 
 .search__info {
@@ -550,7 +561,7 @@
   align-items: center;
   align-content: space-between;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 568px;
   min-height: 395px;
   margin: 0 auto;
@@ -579,7 +590,7 @@
   margin-right: 5px;
 }
 
-.search__wrap {
+.search__modal__wrap {
   position: relative;
 }
 
@@ -744,6 +755,7 @@
 
 .search__map {
   position: absolute;
+  z-index: 1;
   left: 0;
   bottom: -120px;
   min-width: 1200px;
@@ -1197,6 +1209,10 @@
   background-position: 0 0;
 }
 
+.star__1 {
+  width: 19px;
+}
+
 .star__2 {
   width: 40px;
 }
@@ -1207,6 +1223,10 @@
 
 .star__4 {
   width: 90px;
+}
+
+.star__5 {
+  width: 112px;
 }
 
 .card__digit {
@@ -1228,5 +1248,48 @@
 }
 
 
+/* Анимации, оживление форм*/ 
+/* Управление положением формы поиска гостиниц */
+@keyframes not__appear {
+  100% { transform: translateY(-100%);}
+}
 
+@keyframes appear {
+  from { transform: translateY(-100%);}
+  100% { transform: translateY(0);}
+}
 
+.not__appear {
+  animation-name: not__appear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.appear {
+  animation-name: appear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+/* Валидация формы поиска */
+@keyframes shake {
+  10%, 30%,  50%, 70%, 90% { 
+    transform: rotate(1deg);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: rotate(-1deg);
+  }
+
+  100% { transform: rotate(0);}
+}
+
+.error,
+.error:focus {
+  border: 2px solid var(--basic-arror);
+}
+
+.shake {
+  animation-name: shake;
+  animation-duration: 0.2s;
+}
