@@ -23,18 +23,21 @@ const classAction = function (element, classNameRem, classNameAdd) {
   element.classList.add(classNameAdd);
 }
 
+searchModal.classList.add('collapse__search__modal');
+searchModal.classList.add('not__appear');
+
 // переключатель формы поиска
 searchToggle.addEventListener('click', function (evt) {
   evt.preventDefault();
+  
+  searchModal.classList.remove('collapse__search__modal');
   
   searchModal.classList.remove('shake');
   
   if (searchModal.classList.contains('not__appear')) {
     classAction(searchModal, 'not__appear', 'appear');
-
   } else  {
     classAction(searchModal, 'appear', 'not__appear');
-    
   }
 });
 
@@ -58,6 +61,12 @@ buttonModal.addEventListener('click', function () {
       missing = true;
       inputRequired[i].classList.add('error');
     } 
+
+    if (i < inputDate.length) {
+      inputDate[i].oninput = function() {
+        inputDate[i].classList.remove('error');
+      }
+    }
   }
   
   if (missing) {
@@ -65,18 +74,9 @@ buttonModal.addEventListener('click', function () {
   } 
 });
 
-// поля search__date
-for (let i = 0; i < inputDate.length; i++) {
-  inputDate[i].setAttribute('type', 'text');
-  inputDate[i].oninput = function() {
-    inputDate[i].classList.remove('error');
-  }
-}
-
 // поля search__count и кнопки
 for (let i = 0; i < inputCount.length; i++) {
-  inputCount[i].setAttribute('type', 'text');
-
+  let number;
   try {
     storage = localStorage.getItem(i);
   } catch (err) {
@@ -84,10 +84,10 @@ for (let i = 0; i < inputCount.length; i++) {
   }
 
   if (storage) {
-    inputCount[i].value = storage;
+    number = storage;
+    inputCount[i].value = number;
   }
 
-  let number;
   inputCount[i].oninput = function () {
     inputCount[i].classList.remove('error');
     number = inputCount[i].value;
@@ -114,6 +114,8 @@ for (let i = 0; i < inputCount.length; i++) {
 }
 
 searchModal.addEventListener('submit', function () {
+  searchModal.classList.remove('shake');
+  
   for (let i = 0; i < inputCount.length; i++) {
     if (inputCount[i].value && isStorageSupport) {
       localStorage.setItem(i, inputCount[i].value);

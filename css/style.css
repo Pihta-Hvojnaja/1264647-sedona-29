@@ -506,7 +506,7 @@
   background-color: var(--basic-white);
 }
 
-.search h2 {
+.search__wrap p:first-of-type {
   width: 435px;
   margin: 0 auto 30px;;
   font-size: 30px;
@@ -583,11 +583,13 @@
 .search__label {
   width: 100px;
   margin-right: 12px;
+  color: var(--basic-black);
 }
 
 .search__label__children {
   width: 60px;
   margin-right: 5px;
+  color: var(--basic-black);
 }
 
 .search__modal__wrap {
@@ -1249,7 +1251,7 @@
 
 
 /* Анимации, оживление форм*/ 
-/* Управление положением формы поиска гостиниц */
+/* Управление положением и отображением формы поиска гостиниц */
 @keyframes not__appear {
   100% { transform: translateY(-100%);}
 }
@@ -1269,6 +1271,10 @@
   animation-name: appear;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+}
+
+.collapse__search__modal {
+  display: none;
 }
 
 /* Валидация формы поиска */
