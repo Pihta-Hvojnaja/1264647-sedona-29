@@ -18,9 +18,20 @@ let isStorageSupport = true;
 let storage = "";
 
 // функции
-const classAction = function (element, classNameRem, classNameAdd) {
+
+let j;
+const classAction = function (element, classNameRem, classNameAdd, time) {
   element.classList.remove(classNameRem);
   element.classList.add(classNameAdd);
+  
+  if (time) {
+    setTimeout(function() {
+      if(j === 1) { 
+        return; 
+      };
+      searchModal.classList.add('collapse__search__modal');
+    }, time);
+  }
 }
 
 searchModal.classList.add('collapse__search__modal');
@@ -31,13 +42,15 @@ searchToggle.addEventListener('click', function (evt) {
   evt.preventDefault();
   
   searchModal.classList.remove('collapse__search__modal');
-  
   searchModal.classList.remove('shake');
   
   if (searchModal.classList.contains('not__appear')) {
+    searchModal.classList.remove('collapse__search__modal');
     classAction(searchModal, 'not__appear', 'appear');
+    j = 1;
   } else  {
-    classAction(searchModal, 'appear', 'not__appear');
+    classAction(searchModal, 'appear', 'not__appear', 2500);
+    j = 0;
   }
 });
 
@@ -45,7 +58,8 @@ window.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 27) {
     if (!searchModal.classList.contains('not__appear')) {
       evt.preventDefault();
-      classAction(searchModal, 'appear', 'not__appear');
+      classAction(searchModal, 'appear', 'not__appear', 2500);
+      j = 0;
     }
   }
 });
@@ -53,6 +67,7 @@ window.addEventListener('keydown', function (evt) {
 // валидация полей
 buttonModal.addEventListener('click', function () {
   searchModal.classList.remove('shake');
+  searchModal.classList.remove('appear');
   searchModal.offsetWidth = searchModal.offsetWidth;
 
   for (let i = 0; i < inputModal.length; i++) {
@@ -76,7 +91,7 @@ buttonModal.addEventListener('click', function () {
 
 // поля search__count и кнопки
 for (let i = 0; i < inputCount.length; i++) {
-  let number;
+  
   try {
     storage = localStorage.getItem(i);
   } catch (err) {
@@ -84,37 +99,36 @@ for (let i = 0; i < inputCount.length; i++) {
   }
 
   if (storage) {
-    number = storage;
-    inputCount[i].value = number;
+    inputCount[i].value = storage;
   }
 
   inputCount[i].oninput = function () {
     inputCount[i].classList.remove('error');
-    number = inputCount[i].value;
-    
-    if (isNaN(number)) {
-      inputCount[i].value = '';
+  
+    if (isNaN(inputCount[i].value)) {
+      inputCount[i].value = "";
     } 
-    number = parseInt(inputCount[i].value, 10);
   }
   
   btnMinus[i].addEventListener('click', function (evt) {
     evt.preventDefault();
-    if (number > 1) {
-      number = inputCount[i].value--;
+    if (inputCount[i].value >= 1) {
+      inputCount[i].value--;
     }
   });
 
   btnPlus[i].addEventListener('click', function (evt) {
     evt.preventDefault();
-    if (number < 99) {
-      number = inputCount[i].value++;
+    if (inputCount[i].value < 99) {
+      inputCount[i].value++;
     }
   });
 }
 
 searchModal.addEventListener('submit', function () {
-  searchModal.classList.remove('shake');
+  
+  classAction(searchModal, 'shake', 'collapse__search__modal');
+  classAction(searchModal, 'appear', 'not__appear');
   
   for (let i = 0; i < inputCount.length; i++) {
     if (inputCount[i].value && isStorageSupport) {
